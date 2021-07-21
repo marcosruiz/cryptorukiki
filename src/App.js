@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import CoinList from './pages/CoinList';
+import CoinDetail from './pages/CoinDetail';
+import {Link, Route} from "wouter"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="contanier mx-auto p-6 bg-gray-500">
+      <Link to='/all'>Zona minado</Link>
+      <Route component={CoinList} path="/all"/>
+      <Route component={CoinDetail} path="/coin/:id"/>
     </div>
   );
 }
